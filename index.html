@@ -1,0 +1,537 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Soft Skills IT – Company Profile</title>
+    <!-- Font Awesome 6 (free) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Roboto, system-ui, -apple-system, sans-serif;
+            background: #f5f9fe;
+            color: #1a2639;
+            line-height: 1.5;
+            padding: 2rem 1rem;
+        }
+
+        .profile-container {
+            max-width: 1300px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 2.5rem 2.5rem 2rem 2rem;
+            box-shadow: 0 30px 50px rgba(0,20,50,0.15);
+            overflow: hidden;
+        }
+
+        /* header / hero */
+        .profile-header {
+            background: linear-gradient(145deg, #0b1e33 0%, #1c3a5f 100%);
+            padding: 2.8rem 3rem 2.5rem 3rem;
+            color: white;
+            border-bottom: 6px solid #f9b81b;
+        }
+
+        .header-top {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 2.2rem;
+        }
+
+        .brand h1 {
+            font-size: 2.8rem;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+            line-height: 1.1;
+        }
+
+        .brand .tagline {
+            font-size: 1.3rem;
+            font-weight: 300;
+            color: #f0f4fc;
+            border-left: 4px solid #f9b81b;
+            padding-left: 1rem;
+            margin-top: 0.5rem;
+        }
+
+        .contact-badge {
+            background: rgba(255,255,255,0.12);
+            backdrop-filter: blur(8px);
+            padding: 1.2rem 2rem;
+            border-radius: 60px;
+            display: flex;
+            gap: 2rem;
+            flex-wrap: wrap;
+            font-size: 1rem;
+            border: 1px solid rgba(255,255,255,0.2);
+        }
+
+        .contact-badge i {
+            color: #f9b81b;
+            margin-right: 10px;
+            width: 1.4rem;
+        }
+
+        .contact-badge a {
+            color: white;
+            text-decoration: none;
+            border-bottom: 1px dotted rgba(255,255,255,0.5);
+        }
+
+        .contact-badge a:hover {
+            border-bottom: 1px solid #f9b81b;
+        }
+
+        .header-quote {
+            font-size: 1.2rem;
+            max-width: 65%;
+            background: rgba(249,184,27,0.18);
+            padding: 1.3rem 2rem;
+            border-radius: 60px 60px 60px 20px;
+            margin-top: 1rem;
+            font-weight: 400;
+            border: 1px solid rgba(249,184,27,0.4);
+        }
+
+        /* grid / sections */
+        .profile-body {
+            padding: 2.8rem 3rem;
+            background: #ffffff;
+        }
+
+        .section {
+            margin-bottom: 3.2rem;
+            scroll-margin-top: 2rem;
+        }
+
+        .section-title {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 2rem;
+            font-weight: 600;
+            color: #0b1e33;
+            margin-bottom: 1.8rem;
+            border-bottom: 3px solid #f0f4fc;
+            padding-bottom: 0.5rem;
+        }
+
+        .section-title i {
+            background: #f9b81b;
+            padding: 0.7rem;
+            border-radius: 18px;
+            font-size: 1.6rem;
+            color: #0b1e33;
+        }
+
+        .two-col {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+        }
+
+        .card-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 1.8rem;
+        }
+
+        .card {
+            background: #f8faff;
+            padding: 1.8rem 1.5rem;
+            border-radius: 28px;
+            transition: 0.2s;
+            border: 1px solid #e9eef5;
+            box-shadow: 0 8px 12px rgba(0,0,0,0.02);
+        }
+
+        .card:hover {
+            border-color: #f9b81b80;
+            box-shadow: 0 16px 24px -8px rgba(0, 55, 120, 0.15);
+        }
+
+        .card h3 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: #113355;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .pill-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.7rem 1rem;
+            margin-top: 1rem;
+        }
+
+        .pill-list span {
+            background: white;
+            padding: 0.4rem 1.3rem;
+            border-radius: 40px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            border: 1px solid #cdddf5;
+            box-shadow: 0 2px 4px #00000008;
+        }
+
+        .usp-list, .values-list {
+            list-style: none;
+        }
+
+        .usp-list li, .values-list li {
+            margin-bottom: 0.9rem;
+            display: flex;
+            gap: 14px;
+            align-items: flex-start;
+        }
+
+        .usp-list li i, .values-list li i {
+            color: #f9b81b;
+            font-size: 1.4rem;
+            min-width: 2rem;
+            margin-top: 3px;
+        }
+
+        .metrics-banner {
+            background: linear-gradient(105deg, #112b44, #1f486b);
+            padding: 2.2rem 2.5rem;
+            border-radius: 3rem;
+            color: white;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+            margin: 2.5rem 0 1.5rem 0;
+        }
+
+        .metric-item {
+            text-align: center;
+        }
+
+        .metric-number {
+            font-size: 2.8rem;
+            font-weight: 700;
+            color: #f9b81b;
+            line-height: 1;
+        }
+
+        .metric-label {
+            font-size: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            opacity: 0.85;
+        }
+
+        .team-structure {
+            background: #f1f6fd;
+            border-radius: 2.5rem;
+            padding: 2rem 2.2rem;
+        }
+
+        .team-divisions {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .division {
+            display: flex;
+            flex-wrap: wrap;
+            border-bottom: 1px dashed #b7c9e2;
+            padding-bottom: 1rem;
+        }
+
+        .division:last-child {
+            border-bottom: none;
+        }
+
+        .division-name {
+            width: 230px;
+            font-weight: 700;
+            font-size: 1.2rem;
+            color: #1c3a5f;
+        }
+
+        .division-desc {
+            flex: 1;
+            color: #2e405b;
+        }
+
+        .method-phase {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+            margin-top: 1rem;
+        }
+
+        .phase {
+            background: white;
+            border-radius: 40px;
+            padding: 0.9rem 1.8rem;
+            border: 1px solid #d7e2f2;
+            font-weight: 500;
+            box-shadow: 0 4px 10px #f0f5fe;
+        }
+
+        .phase span {
+            color: #f9b81b;
+            font-weight: 700;
+            margin-right: 10px;
+        }
+
+        .footer-contact {
+            background: #0e2238;
+            color: white;
+            padding: 2.5rem 3rem;
+            border-radius: 2rem 2rem 0 0;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .footer-contact .contact-details {
+            display: flex;
+            gap: 2.5rem;
+            flex-wrap: wrap;
+        }
+
+        .footer-contact i {
+            color: #f9b81b;
+            margin-right: 10px;
+        }
+
+        .social-links a {
+            color: white;
+            font-size: 2rem;
+            margin: 0 8px;
+            transition: 0.2s;
+            display: inline-block;
+        }
+
+        .social-links a:hover {
+            color: #f9b81b;
+            transform: translateY(-5px);
+        }
+
+        hr {
+            border: none;
+            height: 2px;
+            background: linear-gradient(to right, #f9b81b 30%, #e3eaf3 80%);
+            margin: 2rem 0;
+        }
+
+        .small-note {
+            color: #5c6f87;
+            font-size: 0.9rem;
+            text-align: right;
+            margin-top: 0.5rem;
+        }
+
+        @media (max-width: 800px) {
+            .profile-header, .profile-body, .footer-contact {
+                padding: 2rem 1.5rem;
+            }
+            .two-col {
+                grid-template-columns: 1fr;
+            }
+            .header-quote {
+                max-width: 100%;
+            }
+            .contact-badge {
+                flex-direction: column;
+                gap: 0.8rem;
+                border-radius: 32px;
+            }
+            .brand h1 {
+                font-size: 2.2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="profile-container">
+    <!-- HEADER -->
+    <div class="profile-header">
+        <div class="header-top">
+            <div class="brand">
+                <h1>Soft Skills Engineering <span style="font-weight:300;">(Soft Skills IT)</span></h1>
+                <div class="tagline">Engineering Human Potential & Digital Growth</div>
+            </div>
+            <div class="contact-badge">
+                <span><i class="fas fa-map-pin"></i> 3rd Floor, Interlace Plaza, I-8 Markaz, Islamabad</span>
+                <span><i class="fas fa-envelope"></i> <a href="mailto:info@softskills.it.com">info@softskills.it.com</a></span>
+                <span><i class="fas fa-phone-alt"></i> <a href="tel:+923002457241">+92 300 2457241</a></span>
+                <span><i class="fas fa-globe"></i> <a href="https://softskills.it.com" target="_blank">softskills.it.com</a></span>
+            </div>
+        </div>
+        <div class="header-quote">
+            <i class="fas fa-quote-left" style="color:#f9b81b; opacity:0.8; margin-right:10px;"></i> 
+            Empowering professionals & organizations through structured training, digital marketing, IT & ecommerce — delivering measurable results.
+        </div>
+    </div>
+
+    <!-- BODY -->
+    <div class="profile-body">
+
+        <!-- MISSION + VISION + CORE VALUES (2-col) -->
+        <div class="two-col">
+            <div class="section">
+                <div class="section-title"><i class="fas fa-bullseye"></i> Mission</div>
+                <p style="font-size:1.2rem; background:#f0f6ff; padding:1.5rem; border-radius:2rem;">To empower professionals and organizations through structured training, digital marketing services, IT solutions, ecommerce development, and business consulting that deliver measurable results in today’s competitive digital world.</p>
+            </div>
+            <div class="section">
+                <div class="section-title"><i class="fas fa-eye"></i> Vision</div>
+                <p style="font-size:1.2rem; background:#f0f6ff; padding:1.5rem; border-radius:2rem;">To become a leading force in transforming human potential and digital growth by combining skills, systems, and strategy, enabling businesses and professionals to dominate their markets through excellence and innovation.</p>
+            </div>
+        </div>
+
+        <!-- CORE VALUES -->
+        <div class="section">
+            <div class="section-title"><i class="fas fa-heart"></i> Core Values</div>
+            <ul class="values-list card-grid">
+                <li class="card"><i class="fas fa-check-circle"></i> <strong>Excellence in Execution:</strong> Delivering practical, results-oriented solutions that create real impact.</li>
+                <li class="card"><i class="fas fa-puzzle-piece"></i> <strong>Customization & Personalization:</strong> No cookie-cutter approaches—every solution is tailored.</li>
+                <li class="card"><i class="fas fa-chart-line"></i> <strong>Data-Driven Decision Making:</strong> Leveraging analytics and performance metrics to guide strategy.</li>
+                <li class="card"><i class="fas fa-seedling"></i> <strong>Continuous Growth:</strong> Ongoing support beyond implementation to ensure long-term success.</li>
+                <li class="card"><i class="fas fa-briefcase"></i> <strong>Industry Expertise:</strong> Combining experienced trainers, consultants, and technical professionals.</li>
+            </ul>
+        </div>
+
+        <!-- SERVICES OFFERED -->
+        <div class="section">
+            <div class="section-title"><i class="fas fa-cogs"></i> Services Offered</div>
+            <div class="card-grid">
+                <div class="card"><h3><i class="fas fa-comments" style="color:#f9b81b;"></i> 1. Soft Skills & Leadership</h3><p>Communication, leadership, teamwork, workplace performance — measurable behavioral change.</p></div>
+                <div class="card"><h3><i class="fas fa-chalkboard-teacher"></i> 2. Corporate Training</h3><p>Customized organizational development, tailored for real workplace challenges.</p></div>
+                <div class="card"><h3><i class="fas fa-chart-pie"></i> 3. Digital Marketing</h3><p>Performance-driven: SEO, paid ads, brand positioning, lead generation, data-driven campaigns.</p></div>
+                <div class="card"><h3><i class="fas fa-shopping-cart"></i> 4. Ecommerce Solutions</h3><p>Advanced analytics, platform development, end-to-end scaling strategies.</p></div>
+                <div class="card"><h3><i class="fas fa-laptop-code"></i> 5. IT & Software Dev</h3><p>Custom web apps, scalable platforms, secure high-performance software.</p></div>
+                <div class="card"><h3><i class="fas fa-certificate"></i> 6. Certifications</h3><p>Industry-recognized courses, professional skill enhancement & career advancement.</p></div>
+            </div>
+        </div>
+
+        <!-- TARGET AUDIENCE (Industries + Client segments) -->
+        <div class="two-col">
+            <div class="section">
+                <div class="section-title"><i class="fas fa-industry"></i> Industries Served</div>
+                <div class="pill-list">
+                    <span>Education</span><span>Healthcare</span><span>Corporate Enterprises</span><span>SMEs & Startups</span><span>Industrial</span><span>Financial & Trading</span>
+                </div>
+            </div>
+            <div class="section">
+                <div class="section-title"><i class="fas fa-users"></i> Client Segments</div>
+                <ul style="margin-left:1.5rem;">
+                    <li>Organizations seeking digital transformation</li>
+                    <li>Companies requiring employee development</li>
+                    <li>Businesses needing ecommerce & marketing</li>
+                    <li>Professionals pursuing certification</li>
+                    <li>Enterprises looking for custom IT solutions</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- NOTABLE ACHIEVEMENTS (big banner) -->
+        <div class="metrics-banner">
+            <div class="metric-item"><span class="metric-number">90+</span> <div class="metric-label">Team members</div></div>
+            <div class="metric-item"><span class="metric-number">180+</span> <div class="metric-label">Awards won</div></div>
+            <div class="metric-item"><span class="metric-number">2,360+</span> <div class="metric-label">Satisfied clients</div></div>
+            <div class="metric-item"><span class="metric-number">15+</span> <div class="metric-label">Years experience</div></div>
+        </div>
+
+        <!-- USPs + competitive advantages -->
+        <div class="section">
+            <div class="section-title"><i class="fas fa-gem"></i> Unique Selling Propositions</div>
+            <ul class="usp-list two-col" style="grid-column:span 2;">
+                <li><i class="fas fa-cubes"></i> <strong>Integrated Service Ecosystem:</strong> human development + digital growth (training, marketing, IT, ecommerce).</li>
+                <li><i class="fas fa-user-tie"></i> <strong>Industry-Experienced Professionals:</strong> real‑world practitioners, not just theory.</li>
+                <li><i class="fas fa-chart-simple"></i> <strong>Results-Oriented Methodology:</strong> data-driven KPIs, tangible impact.</li>
+                <li><i class="fas fa-layer-group"></i> <strong>Five-Pillar Framework:</strong> consultation → design → implementation → evaluation → support.</li>
+                <li><i class="fas fa-magic"></i> <strong>Customization at Scale:</strong> bespoke solutions for diverse industries & sizes.</li>
+                <li><i class="fas fa-handshake"></i> <strong>End-to-End Delivery:</strong> single vendor, complete service.</li>
+            </ul>
+        </div>
+
+        <!-- COMPANY HISTORY (brief) -->
+        <div class="section">
+            <div class="section-title"><i class="fas fa-timeline"></i> Company History</div>
+            <p style="background:#f2f7ff; padding:1.5rem 2rem; border-radius:3rem;">Soft Skills IT was established to bridge the gap between human potential development and digital business growth. Evolved from initial soft skills training to a full-service provider offering digital marketing, ecommerce, and IT solutions — while keeping human capital development at the core.</p>
+        </div>
+
+        <!-- TEAM STRUCTURE -->
+        <div class="section">
+            <div class="section-title"><i class="fas fa-people-group"></i> Team Structure (90+ professionals)</div>
+            <div class="team-structure">
+                <div class="team-divisions">
+                    <div class="division"><span class="division-name">Leadership & Management</span><span class="division-desc">Strategic direction, client relationships</span></div>
+                    <div class="division"><span class="division-name">Training & Development</span><span class="division-desc">Professional trainers (soft skills, leadership, certification)</span></div>
+                    <div class="division"><span class="division-name">Digital Marketing Division</span><span class="division-desc">Performance specialists, SEO, brand strategists, data analysts</span></div>
+                    <div class="division"><span class="division-name">Technology & Development</span><span class="division-desc">Software engineers, web app developers, ecommerce, IT consultants</span></div>
+                    <div class="division"><span class="division-name">Client Success Team</span><span class="division-desc">Account managers, support, performance analysts</span></div>
+                </div>
+                <p style="margin-top:1.5rem;"><strong>Total team:</strong> 90+ diverse professionals across all divisions.</p>
+            </div>
+        </div>
+
+        <!-- WORKING METHODOLOGY -->
+        <div class="section">
+            <div class="section-title"><i class="fas fa-diagram-project"></i> Working Methodology (five‑phase)</div>
+            <div class="method-phase">
+                <div class="phase"><span>1.</span> Consultation & Needs Assessment</div>
+                <div class="phase"><span>2.</span> Program & Strategy Design</div>
+                <div class="phase"><span>3.</span> Training & Implementation</div>
+                <div class="phase"><span>4.</span> Performance Evaluation (data-driven)</div>
+                <div class="phase"><span>5.</span> Continuous Support</div>
+            </div>
+        </div>
+
+        <!-- COMPETITIVE ADVANTAGES (quick list) -->
+        <div class="section">
+            <div class="section-title"><i class="fas fa-trophy"></i> Competitive Advantages</div>
+            <div class="pill-list" style="justify-content:flex-start;">
+                <span>Holistic approach (human + tech)</span>
+                <span>2,360+ satisfied clients</span>
+                <span>6 industry sectors</span>
+                <span>Scalable: startups to enterprises</span>
+                <span>Local expertise, global standards</span>
+                <span>Continuous innovation</span>
+            </div>
+        </div>
+        
+        <!-- divider before footer -->
+        <hr>
+    </div> <!-- end profile-body -->
+
+    <!-- FOOTER / CONTACT -->
+    <div class="footer-contact">
+        <div>
+            <div style="font-size:2rem; font-weight:600; margin-bottom:1rem;">Soft Skills IT</div>
+            <div class="contact-details">
+                <span><i class="fas fa-map-marker-alt"></i> 3rd Floor, Interlace Plaza, I-8 Markaz, Islamabad</span>
+                <span><i class="fas fa-envelope"></i> info@softskills.it.com</span>
+                <span><i class="fas fa-phone"></i> +92 300 2457241</span>
+                <span><i class="fas fa-link"></i> https://softskills.it.com</span>
+            </div>
+        </div>
+        <div class="social-links">
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-youtube"></i></a>
+        </div>
+    </div>
+    <div class="small-note" style="padding:1rem 3rem; background:#f5f9fe;">Last Updated: March 2026 | Soft Skills Engineering — Engineering Human Potential & Digital Growth</div>
+</div> <!-- end profile-container -->
+</body>
+</html>
