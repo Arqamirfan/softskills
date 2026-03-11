@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
-    <title>Soft Skills IT – Company Profile (Responsive)</title>
-    <!-- Font Awesome 6 (free) -->
+    <title>Soft Skills IT – Company Profile (New Header)</title>
+    <!-- Font Awesome 6 -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
         * {
@@ -14,7 +14,7 @@
         }
 
         body {
-            font-family: 'Segoe UI', Roboto, system-ui, -apple-system, sans-serif;
+            font-family: 'Segoe UI', Roboto, system-ui, sans-serif;
             background: #f5f9fe;
             color: #1a2639;
             line-height: 1.5;
@@ -35,95 +35,96 @@
             overflow: hidden;
         }
 
-        /* header / hero - IMPROVED SPACING */
+        /* ===== COMPLETELY NEW HEADER - SIMPLE & CLEAN ===== */
         .profile-header {
             background: linear-gradient(145deg, #0b1e33 0%, #1c3a5f 100%);
-            padding: 2.2rem 2rem;
+            padding: 2rem 2.5rem;
             color: white;
             border-bottom: 6px solid #f9b81b;
         }
 
-        .header-top {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-between;
-            align-items: center;
-            gap: 2rem; /* equal gap between name and contact */
-            margin-bottom: 2rem;
-        }
-
+        /* brand section */
         .brand {
-            flex: 1 1 300px;
+            margin-bottom: 1.5rem;
         }
 
         .brand h1 {
-            font-size: clamp(2rem, 5vw, 2.8rem);
+            font-size: 2.5rem;
             font-weight: 700;
             letter-spacing: -0.02em;
             line-height: 1.1;
+            margin-bottom: 0.3rem;
         }
 
         .brand .tagline {
-            font-size: clamp(1rem, 3vw, 1.3rem);
+            font-size: 1.2rem;
             font-weight: 300;
             color: #f0f4fc;
             border-left: 4px solid #f9b81b;
             padding-left: 1rem;
-            margin-top: 0.5rem;
         }
 
-        .contact-badge {
-            background: rgba(255,255,255,0.12);
-            backdrop-filter: blur(8px);
-            padding: 1.2rem 1.8rem;
-            border-radius: 60px;
+        /* contact info - simple row */
+        .contact-row {
             display: flex;
-            gap: 1.5rem;
             flex-wrap: wrap;
-            font-size: 1rem;
-            border: 1px solid rgba(255,255,255,0.2);
-            flex: 1 1 400px;
-            justify-content: center;
+            align-items: center;
+            gap: 1.8rem 2.5rem;
+            background: rgba(255,255,255,0.08);
+            padding: 1rem 1.8rem;
+            border-radius: 60px;
+            border: 1px solid rgba(255,255,255,0.15);
+            margin-bottom: 1.5rem;
         }
 
-        .contact-badge i {
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+            font-size: 1rem;
+            white-space: nowrap;
+        }
+
+        .contact-item i {
             color: #f9b81b;
-            margin-right: 8px;
+            font-size: 1.1rem;
             width: 1.2rem;
             text-align: center;
         }
 
-        .contact-badge a {
+        .contact-item a {
             color: white;
             text-decoration: none;
-            border-bottom: 1px dotted rgba(255,255,255,0.5);
-            word-break: break-word;
+            border-bottom: 1px dotted rgba(255,255,255,0.4);
         }
 
-        .contact-badge a:hover {
+        .contact-item a:hover {
             border-bottom: 1px solid #f9b81b;
         }
 
+        /* quote section */
         .header-quote {
             font-size: 1.1rem;
-            max-width: 100%;
-            background: rgba(249,184,27,0.18);
-            padding: 1.3rem 2rem;
+            background: rgba(249,184,27,0.15);
+            padding: 1.2rem 2rem;
             border-radius: 60px 60px 60px 20px;
-            margin-top: 1rem;
-            font-weight: 400;
-            border: 1px solid rgba(249,184,27,0.4);
+            border: 1px solid rgba(249,184,27,0.3);
         }
 
-        /* grid / sections */
+        .header-quote i {
+            color: #f9b81b;
+            margin-right: 0.8rem;
+            opacity: 0.9;
+        }
+
+        /* ===== REST OF THE STYLES (SAME AS BEFORE) ===== */
         .profile-body {
-            padding: 2.5rem 2rem;
+            padding: 2.5rem 2.5rem;
             background: #ffffff;
         }
 
         .section {
             margin-bottom: 3rem;
-            scroll-margin-top: 2rem;
         }
 
         .section-title {
@@ -313,7 +314,7 @@
         .footer-contact {
             background: #0e2238;
             color: white;
-            padding: 2rem 2rem;
+            padding: 2rem 2.5rem;
             border-radius: 2rem 2rem 0 0;
             display: flex;
             flex-wrap: wrap;
@@ -343,7 +344,6 @@
             color: white;
             font-size: 1.8rem;
             transition: 0.2s;
-            display: inline-block;
         }
 
         .social-links a:hover {
@@ -362,172 +362,131 @@
             color: #5c6f87;
             font-size: 0.9rem;
             text-align: center;
-            padding: 1rem 2rem;
+            padding: 1rem 2.5rem;
             background: #f5f9fe;
         }
 
-        /* ========== MOBILE FIRST ENHANCEMENTS ========== */
-        @media (max-width: 700px) {
-            .header-top {
-                flex-direction: column;
-                align-items: stretch;
-                gap: 1.5rem;
+        /* ===== MOBILE RESPONSIVE ===== */
+        @media (max-width: 800px) {
+            .profile-header {
+                padding: 1.5rem 1.5rem;
             }
+            
+            .brand h1 {
+                font-size: 2.2rem;
+            }
+            
+            .contact-row {
+                gap: 1rem 1.5rem;
+                padding: 0.9rem 1.2rem;
+            }
+            
+            .contact-item {
+                font-size: 0.95rem;
+            }
+        }
 
+        @media (max-width: 600px) {
             .brand h1 {
                 font-size: 2rem;
             }
-
-            .contact-badge {
-                justify-content: flex-start;
-                padding: 1.2rem;
-                border-radius: 40px;
+            
+            .brand .tagline {
+                font-size: 1.1rem;
+            }
+            
+            .contact-row {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 0.8rem;
+                border-radius: 30px;
+                white-space: normal;
+            }
+            
+            .contact-item {
+                white-space: normal;
                 width: 100%;
             }
-
+            
+            .header-quote {
+                font-size: 1rem;
+                padding: 1rem 1.2rem;
+            }
+            
             .two-col {
                 grid-template-columns: 1fr;
-                gap: 1.5rem;
             }
-
-            .section-title {
-                font-size: 1.7rem;
-            }
-
+            
             .card-grid {
                 grid-template-columns: 1fr;
             }
-
+            
             .metrics-banner {
                 flex-direction: column;
-                align-items: center;
-                padding: 1.8rem;
             }
-
-            .metric-item {
-                width: 100%;
-            }
-
+            
             .division {
                 flex-direction: column;
-                gap: 0.3rem;
             }
-
+            
             .division-name {
                 width: 100%;
             }
-
+            
             .method-phase {
                 flex-direction: column;
             }
-
-            .phase {
-                text-align: center;
-            }
-
+            
             .footer-contact {
                 flex-direction: column;
                 text-align: center;
+                padding: 1.5rem 1.5rem;
             }
-
+            
             .footer-contact .contact-details {
                 justify-content: center;
             }
-
-            .social-links {
-                justify-content: center;
-            }
         }
 
-        /* small mobile extra */
-        @media (max-width: 480px) {
-            .profile-header {
-                padding: 1.5rem 1.2rem;
-            }
-
-            .profile-body {
-                padding: 1.8rem 1.2rem;
-            }
-
-            .header-quote {
-                padding: 1rem 1.2rem;
-                font-size: 1rem;
-                border-radius: 30px 30px 30px 15px;
-            }
-
-            .contact-badge span {
-                width: 100%;
-                display: flex;
-                align-items: center;
-            }
-
-            .section-title {
-                font-size: 1.5rem;
-            }
-
-            .card {
-                padding: 1.5rem 1.2rem;
-            }
-
-            .card h3 {
-                font-size: 1.3rem;
-            }
-
-            .footer-contact {
-                padding: 1.5rem 1.2rem;
-            }
-
-            .footer-contact .contact-details span {
-                display: flex;
-                align-items: center;
-                width: 100%;
-            }
-        }
-
-        /* fix for very small devices */
-        @media (max-width: 360px) {
+        @media (max-width: 400px) {
             .brand h1 {
-                font-size: 1.7rem;
+                font-size: 1.8rem;
             }
-
-            .brand .tagline {
-                font-size: 1rem;
+            
+            .profile-header {
+                padding: 1.2rem 1rem;
             }
-
-            .contact-badge {
-                font-size: 0.9rem;
-                padding: 1rem;
+            
+            .profile-body {
+                padding: 1.5rem 1rem;
             }
         }
-
-        /* ensure equal spacing in header name & contact - already handled by flex gap */
     </style>
 </head>
 <body>
 <div class="profile-container">
-    <!-- HEADER - with equal gap between name and contact -->
+    <!-- ===== BRAND NEW HEADER - SIMPLE & PERFECT SPACING ===== -->
     <div class="profile-header">
-        <div class="header-top">
-            <div class="brand">
-                <h1>Soft Skills Engineering</h1>
-                <div class="tagline">Engineering Human Potential & Digital Growth</div>
-            </div>
-            <div class="contact-badge">
-                <span><i class="fas fa-map-pin"></i> 3rd Floor, Interlace Plaza, I-8 Markaz, Islamabad</span>
-                <span><i class="fas fa-envelope"></i> <a href="mailto:info@softskills.it.com">info@softskills.it.com</a></span>
-                <span><i class="fas fa-phone-alt"></i> <a href="tel:+923002457241">+92 300 2457241</a></span>
-                <span><i class="fas fa-globe"></i> <a href="https://softskills.it.com" target="_blank">softskills.it.com</a></span>
-            </div>
+        <div class="brand">
+            <h1>Soft Skills Engineering</h1>
+            <div class="tagline">Engineering Human Potential & Digital Growth</div>
         </div>
+        
+        <div class="contact-row">
+            <span class="contact-item"><i class="fas fa-map-pin"></i> 3rd Floor, Interlace Plaza, I-8 Markaz, Islamabad</span>
+            <span class="contact-item"><i class="fas fa-envelope"></i> <a href="mailto:info@softskills.it.com">info@softskills.it.com</a></span>
+            <span class="contact-item"><i class="fas fa-phone-alt"></i> <a href="tel:+923002457241">+92 300 2457241</a></span>
+            <span class="contact-item"><i class="fas fa-globe"></i> <a href="https://softskills.it.com" target="_blank">softskills.it.com</a></span>
+        </div>
+        
         <div class="header-quote">
-            <i class="fas fa-quote-left" style="color:#f9b81b; opacity:0.8; margin-right:10px;"></i> 
+            <i class="fas fa-quote-left"></i> 
             Empowering professionals & organizations through structured training, digital marketing, IT & ecommerce — delivering measurable results.
         </div>
     </div>
 
-    <!-- BODY -->
+    <!-- BODY SECTION (same as before) -->
     <div class="profile-body">
-
         <!-- MISSION + VISION -->
         <div class="two-col">
             <div class="section">
@@ -552,7 +511,7 @@
             </ul>
         </div>
 
-        <!-- SERVICES OFFERED -->
+        <!-- SERVICES -->
         <div class="section">
             <div class="section-title"><i class="fas fa-cogs"></i> Services Offered</div>
             <div class="card-grid">
@@ -596,12 +555,12 @@
         <!-- USPs -->
         <div class="section">
             <div class="section-title"><i class="fas fa-gem"></i> Unique Selling Propositions</div>
-            <ul class="usp-list two-col" style="grid-column:span 2;">
-                <li><i class="fas fa-cubes"></i> <strong>Integrated Service Ecosystem:</strong> human development + digital growth (training, marketing, IT, ecommerce).</li>
-                <li><i class="fas fa-user-tie"></i> <strong>Industry-Experienced Professionals:</strong> real‑world practitioners, not just theory.</li>
+            <ul class="usp-list two-col">
+                <li><i class="fas fa-cubes"></i> <strong>Integrated Service Ecosystem:</strong> human development + digital growth.</li>
+                <li><i class="fas fa-user-tie"></i> <strong>Industry-Experienced Professionals:</strong> real‑world practitioners.</li>
                 <li><i class="fas fa-chart-simple"></i> <strong>Results-Oriented Methodology:</strong> data-driven KPIs, tangible impact.</li>
                 <li><i class="fas fa-layer-group"></i> <strong>Five-Pillar Framework:</strong> consultation → design → implementation → evaluation → support.</li>
-                <li><i class="fas fa-magic"></i> <strong>Customization at Scale:</strong> bespoke solutions for diverse industries & sizes.</li>
+                <li><i class="fas fa-magic"></i> <strong>Customization at Scale:</strong> bespoke solutions for diverse industries.</li>
                 <li><i class="fas fa-handshake"></i> <strong>End-to-End Delivery:</strong> single vendor, complete service.</li>
             </ul>
         </div>
@@ -643,11 +602,11 @@
         <div class="section">
             <div class="section-title"><i class="fas fa-trophy"></i> Competitive Advantages</div>
             <div class="pill-list" style="justify-content:flex-start;">
-                <span>Holistic approach (human + tech)</span>
-                <span>2,360+ satisfied clients</span>
+                <span>Holistic approach</span>
+                <span>2,360+ clients</span>
                 <span>6 industry sectors</span>
-                <span>Scalable: startups to enterprises</span>
-                <span>Local expertise, global standards</span>
+                <span>Scalable solutions</span>
+                <span>Global standards</span>
                 <span>Continuous innovation</span>
             </div>
         </div>
